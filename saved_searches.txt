@@ -1,4 +1,1 @@
-https://richmondin.craigslist.org/search/bath-in/cta?lat=39.4928&lon=-84.9564&max_auto_miles=80000&max_auto_year=2013&min_auto_miles=500&min_auto_year=1985&search_distance=980#search=1~gallery~0~0
-https://fortcollins.craigslist.org/search/walden-co/cta?lat=40.747&lon=-106.4416&max_auto_miles=80000&max_auto_year=2013&min_auto_miles=500&min_auto_year=1985&search_distance=980#search=1~gallery~0~0
-https://richmondin.craigslist.org/search/bath-in/cta?auto_make_model=supra&lat=39.4928&lon=-84.9564&max_auto_year=1998&min_auto_year=1993&search_distance=980#search=1~gallery~0~0
-https://richmondin.craigslist.org/search/bath-in/cta?auto_make_model=supra&lat=39.4928&lon=-84.9564&max_auto_year=1998&min_auto_year=1993&search_distance=980#search=1~gallery~0~0
+https://www.autonation.com/cars-for-sale?zip=19099&sortby=mileage&sortdirection=0&yr=nomin%7C2009&pagesize=72

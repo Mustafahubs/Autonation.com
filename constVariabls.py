@@ -1,0 +1,12 @@
+GSheetAPI = {
+        "type": "service_account",
+        "project_id": "friendly-slate-374704",
+        "private_key_id": "e91c07b72c644b1b14ebeeb768c312a33b2ce4b8",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+hNMGSs1U8I65\nOdGFvP8pm010nJKw2oYXHfadHrzWEgWt3hAVIwIBUV7fqyWIEZy6BjOIhIrpHPJ7\ndzbWDESExaTCIwV1QqD1f+SLmsR6dxRa9pckp4Uk/HC1PaEX69So+mdThVJtmjoV\n3/dA5DMQGte2uAR6jqZsYMVIWzDcWvB4+qI3sxxSlYtb01redNfk/vIJfIAsGxiy\nWGTBVicg38ZT71yA412ofr6vfs0DYx9/ySepx+Lk8McX5ReVrXO8julcIBYguhz7\nu6SLJLxnjqhhb4sJ2T4MnQifNyId77unTm6UUwN7Dxuk6xAwCRWNzWkKj0+sa5m2\nhGhQtccJAgMBAAECggEAEu9dj88IaEw+Sx95ePrHO2nhgVj8ZVJaqFqEg6ol53rE\nELs0yvz/OoVNUhqO8N6bPovWPFe7/J4xZV78VrrCZpXEIb1cUgKsv6mV2+Ambet+\n3OmMLQrvOzVRuFmnNJruOFsmwNDL1/PPmRP43XywrIWWceUJIOsjlDrr8JyLlyLQ\nxBdY2DgL0NNn+sUyZgmxjgLHUSbSEWZCCnEVbks0/PQMGEz4HH2UvVYtJtAIgy+m\nMG7u5KZ2RM2N/kzeb0/CQv719jseoEn1fmEY6+pf7c1iCQ162MlkB+sXTtPJlnqI\nhx3ITxyJ47sCYjfXCqmCw920WKiIsVDNuFMeJtJgHwKBgQDevaxOM++TQY78HI3A\nirdQytFCL+AgKutKQD4crsMd+9XPbClmsW/DBBiC55A76RpfhmQa2fbNT1rfDQyv\nfFYcw/jgmfjNAc6ElLAu8K4rbi7cH3bNk7M8X7ms+eq8hNLcFRb++4FHY5Svr1vH\nmQ+aopyQLH1Jw5MjSp5Y5OztZwKBgQDa93RqUQmrlF4TR1Jywmn3SNt4yg+kXRB2\n8w0Fk6PToJsq3rEYAWryyElJjp7yIhRYIelKsOkfC8HGzDiwkQzqqWG+RY9OfT5+\nbfpo42rhOU7TS6O7Txx7lMBUg/IzKXLABk4s9oEBoLVkMBzDm6ZHUZiPMwxUe20a\n5kFXpIRyDwKBgQCdmDOuTR7H4I2rIQTGYx8aobV3D+qSt+sr6NJJdvkEYOdBT/Tm\n/MnngCFblT0+tkn7pllzih4N24Se5lvAWcePqLSRLT+UxR96PL1/KLkCb33mLrje\n8Q7Su6PimByWb5/FKYLQu+AXQ4Sy3O6iBVC+Bymg9Glc5GxZfvUUTjy4JwKBgEdz\nIbijct1bD4uI5V1vFPbM/liezpXajEnUK3abY4TlzlwhyHXF2KkaM9fdwv3NowfT\nIPXvXlJ0GqoM756l5ioYVT2qIwYAlkjZCDH7q1+MvKzz7JxtRyUIN+4cFAcfykLg\ni9feI+BtGWN00538hziUZoyroqValRKG+eFoXJN/AoGBAN1zuxj8Dni8RKJoQGKQ\npPvvuQ3uOy54TrfcvRQzzfXF/6MYQoahJjRvGWIbGe4P4/bmNe4LmtRdHrWd8gb5\nqZ1B+A/yLKW1fmRHtZ7JghwbiDBAJoeVZ1Rno0VBfCcG80J9gpwWvrNsFAuEH9Si\noFfiLBA24wowvnYmrp0goqtX\n-----END PRIVATE KEY-----\n",
+        "client_email": "googlesheetapi@friendly-slate-374704.iam.gserviceaccount.com",
+        "client_id": "116087045991383606016",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/googlesheetapi%40friendly-slate-374704.iam.gserviceaccount.com"
+      }

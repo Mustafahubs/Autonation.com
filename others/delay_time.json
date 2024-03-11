@@ -1,0 +1,4 @@
+{
+    "delay_for_each_cycle": [5,10],
+    "delay_after_each_search": [1,1.5]
+}

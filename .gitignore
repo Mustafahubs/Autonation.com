@@ -2,4 +2,4 @@ env/
 output/
 __pycache__/
 browslog.txt
-others/
+tracking.json

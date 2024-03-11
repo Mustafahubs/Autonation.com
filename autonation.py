@@ -15,7 +15,8 @@ webhook_url = 'https://discord.com/api/webhooks/1216642771272863834/D6SzrOrR6yUe
 
 
 class AutonationNewArivals:
-    def __init__(self):
+    def __init__(self,warm_up='no'):
+        self.warm_up = warm_up
         with open('others/delay_time.json') as f: delay_time = json.load(f)
         self.start_delay_cycle, self.end_delay_cycle = delay_time['delay_for_each_cycle']
         self.start_delay_search, self.end_delay_search = delay_time['delay_after_each_search']

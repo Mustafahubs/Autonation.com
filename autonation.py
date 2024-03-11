@@ -36,7 +36,7 @@ class AutonationNewArivals:
         for item in car_items:
             listing_id = item.get_attribute('id')
             title = item.find_elements('xpath', './/div[@class="tile-info"]/a/h3')
-            title = title[0].text if title else 'No-Title'
+            title = title[0].text.replace('\n','') if title else 'No-Title'
             listing_url_tag = item.find_elements('xpath','.//div[@class="tile-info"]/a')
             listing_url = listing_url_tag[0].get_attribute('href') if listing_url_tag else 'No-Listing-URL'
             price_tag = item.find_elements('xpath','.//div[@class="tile-info"]//div[@class="price"]')
@@ -65,6 +65,7 @@ class AutonationNewArivals:
     
     def get_page_listings(self,driver,hashed_link,search_url):
         driver.get(search_url)
+        time.sleep(5)
         load_more_btn = driver.find_elements('css selector','div.load-more>button')
         if load_more_btn: driver.execute_script("arguments[0].scrollIntoView(true);", load_more_btn[0])
 

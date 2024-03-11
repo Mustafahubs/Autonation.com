@@ -1,1 +1,1 @@
-https://www.autonation.com/cars-for-sale?zip=19099&sortby=mileage&sortdirection=0&yr=nomin%7C2009&pagesize=72
+https://www.autonation.com/cars-for-sale?zip=19099&sortby=year&sortdirection=1&yr=nomin%7C2009&pagesize=72

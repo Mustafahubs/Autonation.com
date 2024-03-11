@@ -8,7 +8,7 @@ from pyinputplus import inputYesNo
 from Automations import PopularDefs
 from constVariabls import GSheetAPI
 from discord_webhook import DiscordWebhook
-from selenium.webdriver.common.by import Keys
+from selenium.webdriver.common.by import By
 
 pd = PopularDefs()
 webhook_url = 'https://discord.com/api/webhooks/1216642771272863834/D6SzrOrR6yUeFPA2nftU8lOoSSNU5Bh9C-uJWLt_du4w-v4QEiMBOwXPjdDxxx6_dM4w'

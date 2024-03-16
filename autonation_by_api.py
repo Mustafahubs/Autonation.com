@@ -126,12 +126,14 @@ class Scraper(Session):
             else:
                 price = 0
             mileage = element.get('Mileage', 0)
-            url = "https://www.autonation.com/cars/" + element.get('Vin', '')
+            listing_id = element.get('Vin', '')
+            url = "https://www.autonation.com/cars/" + listing_id
             yield {
-                "Title": title,
-                "Price": price,
-                "Mileage": mileage,
-                "Url": url
+                'listing_id': listing_id,
+                "title": title,
+                "price": price,
+                "mileage": mileage,
+                "url": url
             }
 
     def load_old_file(self) -> set:
@@ -160,18 +162,18 @@ class Scraper(Session):
         with open('urls.txt') as f:
             urls = f.read().splitlines()
         return urls
-    def scrape_cars(self) -> None:
+    def scrape_cars(self,url) -> None:
         """Scrape car data and schedule the next scrape."""
-        for url in self.read_urls():
-            print(f"\n[Info]: Scraping {url}")
-            pyload = generate_json_payload(url)
-            resp = self.make_request(pyload)
-            if resp.status_code == 201:
-                print('[Done]: Data Scraped...')
-                results = self.parse_save_results(resp.json())
-                self.save_results(list(results))
-            else:
-                print(f"[!]: Error occurred with {resp.status_code} code...")
+        print(f"\n[Info]: Scraping {url}")
+        pyload = generate_json_payload(url)
+        resp = self.make_request(pyload)
+        if resp.status_code == 201:
+            print('[Done]: Data Scraped...')
+            results = self.parse_save_results(resp.json())
+            return results
+            # self.save_results(list(results))
+        else:
+            print(f"[!]: Error occurred with {resp.status_code} code...")
 
 
 if __name__ == "__main__":

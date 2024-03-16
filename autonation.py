@@ -9,13 +9,15 @@ from Automations import PopularDefs
 from constVariabls import GSheetAPI
 from discord_webhook import DiscordWebhook
 from selenium.webdriver.common.by import By
+from autonation_by_api import Scraper
 
 pd = PopularDefs()
 webhook_url = 'https://discord.com/api/webhooks/1216642771272863834/D6SzrOrR6yUeFPA2nftU8lOoSSNU5Bh9C-uJWLt_du4w-v4QEiMBOwXPjdDxxx6_dM4w'
 
 
-class AutonationNewArivals:
+class AutonationNewArivals(Scraper):
     def __init__(self,warm_up='no'):
+        super().__init__()
         self.warm_up = warm_up
         with open('others/delay_time.json') as f: delay_time = json.load(f)
         self.start_delay_cycle, self.end_delay_cycle = delay_time['delay_for_each_cycle']
@@ -32,25 +34,19 @@ class AutonationNewArivals:
         return saved_searches
     
     def extract_listings(self,car_items,hashed_link):
+        '''
+        Extract the listings from the page and return a dictionary of listings for the page.
+        {
+            'listing_id': listing_id,
+            "title": title,
+            "price": price,
+            "mileage": mileage,
+            "url": url
+        }
+        '''
         page_listings = {}
         for item in car_items:
-            listing_id = item.get_attribute('id')
-            title = item.find_elements('xpath', './/div[@class="tile-info"]/a/h3')
-            title = title[0].text.replace('\n','') if title else 'No-Title'
-            listing_url_tag = item.find_elements('xpath','.//div[@class="tile-info"]/a')
-            listing_url = listing_url_tag[0].get_attribute('href') if listing_url_tag else 'No-Listing-URL'
-            price_tag = item.find_elements('xpath','.//div[@class="tile-info"]//div[@class="price"]')
-            price = price_tag[0].text if price_tag else 'No-Price'
-            mileage_tag = item.find_elements('xpath','.//div[@class="tile-info"]//span[@class="vehicle-mileage"]')
-            mileage = mileage_tag[0].text if mileage_tag else 'No-Mileage'
-            
-            item = {
-                'listing_id': listing_id,
-                'title': title,
-                'mileage': mileage,
-                'url': listing_url,
-                'price': price,
-            }
+
             if hashed_link in page_listings:
                 page_listings[hashed_link].append(item)
             else:
@@ -63,15 +59,9 @@ class AutonationNewArivals:
         hashed_link = hashlib.md5(search_url.encode()).hexdigest()
         return hashed_link
     
-    def get_page_listings(self,driver,hashed_link,search_url):
-        driver.get(search_url)
-        time.sleep(5)
-        load_more_btn = driver.find_elements('css selector','div.load-more>button')
-        if load_more_btn: driver.execute_script("arguments[0].scrollIntoView(true);", load_more_btn[0])
-
+    def get_page_listings(self,hashed_link,search_url):
         all_listings = {}
-        car_items_xpath = '//an-srp-results//ansrp-srp-tile-v3'
-        car_items = pd.webAction(xpath=car_items_xpath, listElements=True)
+        car_items = self.scrape_cars(search_url)
         page_listings = self.extract_listings(car_items,hashed_link)
         all_listings.update(page_listings)
         return all_listings
@@ -155,7 +145,7 @@ class AutonationNewArivals:
 
     def start(self):
         os.makedirs('others',exist_ok=True)
-        driver = self.open_browser()
+        # driver = self.open_browser()
         work_sheet = self.connect_to_google_sheet()
         saved_searches = self.get_saved_searches()
         if not saved_searches:
@@ -164,7 +154,7 @@ class AutonationNewArivals:
         for search_url in saved_searches:
             hashed_link = self.make_hashed_link(search_url)
             print(f"Getting listings for md5_hased_link: {hashed_link}")
-            try:page_listings = self.get_page_listings(driver,hashed_link,search_url)
+            try:page_listings = self.get_page_listings(hashed_link,search_url)
             except Exception as e:
                 print(f"Error in getting listings for md5_hased_link: {hashed_link}:\n ", e)
                 continue

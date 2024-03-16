@@ -178,7 +178,8 @@ class Scraper(Session):
 
 if __name__ == "__main__":
     # Create a Scraper object
-    Scraper().scrape_cars()
+    url = 'https://www.autonation.com/cars-for-sale?zip=19099&sortby=year&sortdirection=1&yr=nomin%7C2009&pagesize=72'
+    Scraper().scrape_cars(url)
 
     schedule.every(60).seconds.do(Scraper().scrape_cars)
     

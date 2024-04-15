@@ -13,6 +13,8 @@ from autonation_by_api import Scraper
 
 pd = PopularDefs()
 webhook_url = 'https://discord.com/api/webhooks/1216642771272863834/D6SzrOrR6yUeFPA2nftU8lOoSSNU5Bh9C-uJWLt_du4w-v4QEiMBOwXPjdDxxx6_dM4w'
+# Testing webhook (My Discord Server)
+# webhook_url = 'https://discord.com/api/webhooks/1229447062945271869/Osu6RI3SQwxf7ptz5ycVgF46gKXYEacZy-_UFm9JOa0XpUV-xlcGE7pB9qqvrHLWSkSP'
 
 
 class AutonationNewArivals(Scraper):
